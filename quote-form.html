@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request a Quote – CineCraft Studios</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #ffffff;
+      color: #000;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      color: #e50914;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #e50914;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Request a Quote</h1>
+  <p id="selected-type">Loading selected type...</p>
+
+  <form>
+    <label>Your Name</label>
+    <input type="text" required />
+
+    <label>Email</label>
+    <input type="email" required />
+
+    <label>Tell us about your project</label>
+    <textarea rows="5" placeholder="Script idea, length, tone, etc."></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get(\"type\");
+    document.getElementById(\"selected-type\").innerText = \"Movie Type: \" + type;
+  </script>
+</body>
+</html>
